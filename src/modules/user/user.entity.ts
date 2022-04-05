@@ -1,7 +1,7 @@
 import { BaseEntity, Entity, Column, Unique, OneToMany } from 'typeorm';
 import * as bcrypt from 'bcryptjs';
 import { UserRole } from './user-role.enum';
-import { AbstractEntity } from '../../commun/abstract.entity';
+import { AbstractEntity } from '../../common/abstract.entity';
 import { TaskEntity } from '../task/task.entity';
 
 

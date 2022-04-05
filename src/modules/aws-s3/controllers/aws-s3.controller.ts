@@ -2,7 +2,7 @@ import { Controller, UseGuards, Logger, Get, Param, Post, UseInterceptors, Uploa
 import { AuthGuard } from '@nestjs/passport';
 import { AwsS3Service } from '../services/aws-s3.service';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { IFile } from 'src/commun/interfaces';
+import { IFile } from 'src/common/interfaces';
 import { KeyDto } from '../dto/key.dto';
 
 @Controller('aws-s3')

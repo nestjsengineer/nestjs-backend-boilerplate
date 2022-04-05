@@ -3,8 +3,8 @@ import { AppModule } from './app.module';
 import * as config from 'config';
 import { setupSwagger } from './api-docs.swagger';
 import { Logger, NestApplicationOptions } from '@nestjs/common';
-import { TransformInterceptor } from './commun/interceptors/transform.interceptor';
-import { WrapInterceptor } from './commun/interceptors/wrap.interceptor';
+import { TransformInterceptor } from './common/interceptors/transform.interceptor';
+import { WrapInterceptor } from './common/interceptors/wrap.interceptor';
 import * as helmet from 'helmet';
 import * as compression from 'compression';
 import * as rateLimit from 'express-rate-limit';
@@ -22,7 +22,7 @@ async function bootstrap() {
   // global prefix
   app.setGlobalPrefix('api/v1');
   
-  // app.useGlobalInterceptors(new TransformInterceptor(), new WrapInterceptor())
+  app.useGlobalInterceptors(new TransformInterceptor(), new WrapInterceptor())
 
 
   // secure app by setting various HTTP headers.  

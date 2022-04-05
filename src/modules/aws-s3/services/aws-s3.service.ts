@@ -1,7 +1,7 @@
 import { Injectable, Logger, InternalServerErrorException} from '@nestjs/common';
 import * as AWS from 'aws-sdk';
 import * as config from 'config';
-import { IFile } from 'src/commun/interfaces';
+import { IFile } from 'src/common/interfaces';
 import { KeyDto } from '../dto/key.dto';
 
 @Injectable()

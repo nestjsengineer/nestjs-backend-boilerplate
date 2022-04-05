@@ -1,5 +1,5 @@
 import { Exclude, Expose, Type } from 'class-transformer';
-import { AbstractDto } from '../../../commun/dto/abstract.dto';
+import { AbstractDto } from '../../../common/dto/abstract.dto';
 import { TaskStatus } from '../task-status.enum';
 import { UserDto } from '../../user/dto/user.dto';
 

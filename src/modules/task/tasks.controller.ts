@@ -6,7 +6,7 @@ import { TaskStatusValidationPipe } from './pipes/task-status-validation.pipe';
 import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
 import { TaskStatus } from './task-status.enum';
 import { UserEntity } from '../user/user.entity';
-import { AuthUser } from 'src/commun/decorators';
+import { AuthUser } from 'src/common/decorators';
 import { TaskDto } from './dto/task.dto';
 
 @Controller('tasks')
@@ -39,6 +39,8 @@ export class TasksController {
     @Body() createTaskDto: CreateTaskDto,
     @AuthUser() user: UserEntity
   ): Promise<TaskDto> {
+    console.log("create a new task !!!");
+    
     this.logger.verbose(`User "${user.username}" creating a new task. Data: ${JSON.stringify(createTaskDto)}`);
     return this.tasksService.createTask(createTaskDto, user);
   }
